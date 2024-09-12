@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import '../assets/style/Categorias_home.css';
-import '../assets/style/Home.css';
+import '../style/Categorias_home.css';
+import '../style/Home.css';
 import { Link } from 'react-router-dom';
 import SKDImg from "../components/SKDImg";
 

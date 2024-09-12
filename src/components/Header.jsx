@@ -21,14 +21,14 @@ const Header = () => {
             </div></i>
 
             <nav className="nav">
-            <Link to="/">Inicio</Link>
-            <Link to="/Nosotros">Nosotros</Link>
+                <Link to="/">Inicio</Link>
+                <Link to="/Nosotros">Nosotros</Link>
                 <Link to="/Categorias">Categorias</Link>
                 <Link to="#">Proveedores</Link>
             </nav>
             <div className="user-action">
                 <FontAwesomeIcon icon={faUser} />
-                <a href="#">Iniciar / Registrar</a>
+                <Link to="/Login">Iniciar / Registrar</Link>
             </div>
             <div className='burguer'>
                 <BurguerButton />

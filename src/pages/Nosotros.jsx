@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import '../assets/style/Nosotros.css'
+import '../style/Nosotros.css'
 
 const AboutUs = () => {
     return (

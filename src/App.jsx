@@ -6,7 +6,8 @@ import Footer from './components/Footer';
 import Home from './pages/Inicio';
 import Categorias from './pages/Categorias';
 import Nosotros from './pages/Nosotros';
-import '../src/assets/style/Home.css';
+import Login from './pages/Login'
+import '../src/style/Home.css';
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+            <Route path="/Login" element={<Login />} />
+
           <Route path="/Categorias" element={<Categorias />} />
           <Route path='/Nosotros' element={<Nosotros />} />
         </Routes>
