@@ -15,28 +15,35 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre las categorías */
 }
 
 .specialty {
+    flex: 1 1 calc(25% - 20px); /* Ocupa el 25% del ancho menos el gap */
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1 1 calc(25% - 20px);
-    box-sizing: border-box;
     text-align: center;
     background-color: rgb(15, 18, 37);
     padding: 10px;
     border-radius: 8px;
-    overflow: hidden;
-    height: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    height: 325px; /* Altura fija para mantener consistencia */
+    box-sizing: border-box; /* Incluir padding y borde en el tamaño */
+    overflow: hidden; /* Para evitar desbordes */
+}
+
+.specialty:hover {
+    transform: scale(1.05); /* Efecto hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
 }
 
 .specialty img {
     width: 100%;
     height: 60%;
-    object-fit: cover;
+    object-fit: cover; /* Mantener la proporción de la imagen */
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -51,6 +58,7 @@
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    margin: 0;
 }
 
 .specialty h4 {
@@ -63,6 +71,7 @@
     margin: 0;
     font-size: 14px;
     color: #ffffff;
+    word-wrap: break-word; /* Ajustar texto largo */
 }
 
 .more-specialties {
@@ -86,14 +95,33 @@
     text-decoration: underline;
 }
 
+/* Responsividad */
 @media (max-width: 768px) {
     .specialty {
-        flex: 1 1 calc(50% - 20px);
+        flex: 1 1 calc(45% - 20px); /* Dos elementos por fila en pantallas medianas */
+    }
+    .specialties h2 {
+        font-size: 1.5rem; /* Ajustar tamaño de fuente en pantallas medianas */
     }
 }
 
 @media (max-width: 480px) {
     .specialty {
-        flex: 1 1 100%;
+        flex: 1 1 100%; /* Un solo elemento por fila en pantallas pequeñas */
+    }
+    .specialties h2 {
+        font-size: 1.25rem; /* Ajustar tamaño de fuente en pantallas pequeñas */
+    }
+    .specialty {
+        padding: 5px; /* Reducir padding en pantallas pequeñas */
+    }
+    .specialty img {
+        height: 50%; /* Reducir altura de la imagen en pantallas pequeñas */
+    }
+    .specialty .icon {
+        font-size: 30px; /* Ajustar tamaño del ícono en pantallas pequeñas */
+    }
+    .specialty p {
+        font-size: 12px; /* Reducir tamaño de fuente en pantallas pequeñas */
     }
 }

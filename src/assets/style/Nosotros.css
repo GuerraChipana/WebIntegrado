@@ -13,42 +13,42 @@ h1 {
 
 .card {
     border-radius: 8px;
-    padding: 15px; /* Añadido padding para el contenido de la tarjeta */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadido sombreado para una mejor visualización */
-    margin-bottom: 20px; /* Espaciado entre tarjetas */
-    overflow: hidden; /* Evita que el contenido se desborde */
+    padding: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; 
+    overflow: hidden; 
 }
 
 .card-title {
     font-size: 1.75rem;
     font-weight: 600;
     color: #007bff;
-    margin-bottom: 10px; /* Espaciado inferior */
+    margin-bottom: 10px; 
 }
 
 .card-body p {
     font-size: 1rem;
     color: #555;
-    line-height: 1.6; /* Mejorar la legibilidad del texto */
+    line-height: 1.6;
 }
 
 .fs-3 {
-    font-size: 0.875rem; /* Ajustado para que sea un poco más grande que x-small */
+    font-size: 0.875rem; 
 }
 
 .me-2 {
-    font-size: 0.875rem; /* Ajustado para consistencia */
+    font-size: 0.875rem;
     margin-right: 1rem;
 }
 
 iframe {
     border-radius: 8px;
-    width: 100%; /* Asegura que el iframe se ajuste al contenedor */
-    height: auto; /* Mantiene la proporción del iframe */
-    max-width: 100%; /* Evita que el iframe sea más ancho que su contenedor */
+    width: 700px; 
+    height: auto; 
+    max-width: 100%; 
 }
 
-/* Medias Queries para hacer el diseño más responsivo */
+
 
 @media (max-width: 768px) {
     h1 {

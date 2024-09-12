@@ -1,11 +1,8 @@
-body {
-    font-family: Arial, sans-serif;
-}
-
+/* Estilos para la sección de categorías */
 .categories {
-    margin-top: 40px; /* Ajusta el margen superior según el diseño */
+    margin-top: 40px; 
     margin-bottom: 60px;
-    padding: 0 1rem; /* Espacio a los lados para móviles */
+    padding: 0 1rem; 
 }
 
 .categories h2 {
@@ -19,8 +16,8 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espacio entre elementos */
-    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px; 
+    justify-content: center; 
 }
 
 .category {
@@ -28,14 +25,16 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    flex: 1 1 calc(33% - 20px); /* Ajusta el tamaño del elemento para pantallas grandes */
+    flex: 1 1 calc(33% - 20px); 
     box-sizing: border-box;
     text-align: center;
     background-color: rgb(15, 18, 37);
     padding: 10px;
     border-radius: 8px;
     overflow: hidden;
-    height: 300px; /* Ajusta la altura según el diseño */
+    height: 300px; 
+    text-decoration: none; /* Evita subrayado en el enlace */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .category img {
@@ -48,7 +47,7 @@ body {
 }
 
 .category .icon {
-    font-size: 40px; /* Ajusta el tamaño del ícono */
+    font-size: 40px; 
     color: #ffffff;
     margin-bottom: 10px;
 }
@@ -65,16 +64,21 @@ body {
     font-weight: 600;
 }
 
+/* Efecto hover */
+.category:hover {
+    transform: translateY(-10px); /* Eleva ligeramente la categoría */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Añade sombra al pasar el mouse */
+}
 
-
+/* Ajustes para pantallas más pequeñas */
 @media (max-width: 768px) {
     .category {
-        flex: 1 1 calc(50% - 20px); /* Dos elementos por fila en pantallas más pequeñas */
+        flex: 1 1 calc(50% - 20px); 
     }
 }
 
 @media (max-width: 480px) {
     .category {
-        flex: 1 1 100%; /* Un elemento por fila en pantallas muy pequeñas */
+        flex: 1 1 100%; 
     }
 }

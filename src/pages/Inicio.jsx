@@ -36,7 +36,7 @@ const Inicio = () => {
                         </div>
                     </div>
                     <div className="image-container">
-                        <img src="src\assets\img\Vendedor.jpeg" alt="img_vendedor" width="400" />
+                        <img src="src/assets/img/Vendedor.jpeg" alt="img_vendedor" width="400" />
                     </div>
                 </div>
             </section>
@@ -44,42 +44,42 @@ const Inicio = () => {
             <section id="Productos" className="specialties">
                 <h2>Nuestros Productos</h2>
                 <div className="container">
-                    <div className="specialty">
-                        <img src="src\assets\img\Herramientas.png" alt="Herramientas" />
-                        <i className="fas fa-hammer icon"></i>
+                    <Link to="#" className="specialty">
+                        <img src="src/assets/img/Herramientas.png" alt="Herramientas" />
+                        <i className="fas fa-wrench icon"></i>
                         <div className="text-content">
                             <h4>Herramientas</h4>
                             <p>Desde herramientas manuales hasta eléctricas</p>
                         </div>
-                    </div>
-                    <div className="specialty">
-                        <img src="src\assets\img\Materiales.jpg" alt="Materiales" />
-                        <i className="fas fa-cogs icon"></i>
+                    </Link>
+                    <Link to="#" className="specialty">
+                        <img src="src/assets/img/Fontaneria.jpg" alt="Fontanería" />
+                        <i className="fas fa-faucet icon"></i>
                         <div className="text-content">
-                            <h4>Materiales</h4>
-                            <p>Todo lo necesario para tus proyectos de construcción</p>
+                            <h4>Fontanería</h4>
+                            <p>Todo lo necesario para las tuberías del hogar</p>
                         </div>
-                    </div>
-                    <div className="specialty">
-                        <img src="src\assets\img\Pintura.jpg" alt="Pinturas" />
-                        <i className="fas fa-paint-brush icon"></i>
+                    </Link>
+                    <Link to="#" className="specialty">
+                        <img src="src/assets/img/Pintura.png" alt="Pinturas" />
+                        <i className="fas fa-paint-roller icon"></i>
                         <div className="text-content">
                             <h4>Pinturas</h4>
                             <p>Colores y acabados para todos los gustos</p>
                         </div>
-                    </div>
-                    <div className="specialty">
-                        <img src="src\assets\img\Materiales_electricos.jpg" alt="Electricidad" />
+                    </Link>
+                    <Link to="#" className="specialty">
+                        <img src="src/assets/img/Materiales_electricos.jpg" alt="Electricidad" />
                         <i className="fas fa-bolt icon"></i>
                         <div className="text-content">
                             <h4>Materiales Eléctricos</h4>
                             <p>Todo lo necesario para tus instalaciones eléctricas</p>
                         </div>
-                    </div>
+                    </Link>
                 </div>
                 <nav className="more-specialties">
                     <Link to="/Categorias">
-                        <p>Ver más categorias <i className="fas fa-arrow-right"></i></p>
+                        <p>Ver más categorías <i className="fas fa-arrow-right"></i></p>
                     </Link>
                 </nav>
             </section>
