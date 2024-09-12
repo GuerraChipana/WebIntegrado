@@ -21,9 +21,10 @@ const Header = () => {
             </div></i>
 
             <nav className="nav">
-                <Link to="/Nosotros">Nosotros</Link>
+            <Link to="/">Inicio</Link>
+            <Link to="/Nosotros">Nosotros</Link>
                 <Link to="/Categorias">Categorias</Link>
-                <Link to="/Contacto">Contacto</Link>
+                <Link to="#">Proveedores</Link>
             </nav>
             <div className="user-action">
                 <FontAwesomeIcon icon={faUser} />
