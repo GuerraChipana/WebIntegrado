@@ -13,27 +13,91 @@ h1 {
 
 .card {
     border-radius: 8px;
+    padding: 15px; /* Añadido padding para el contenido de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadido sombreado para una mejor visualización */
+    margin-bottom: 20px; /* Espaciado entre tarjetas */
+    overflow: hidden; /* Evita que el contenido se desborde */
 }
 
 .card-title {
     font-size: 1.75rem;
     font-weight: 600;
     color: #007bff;
+    margin-bottom: 10px; /* Espaciado inferior */
 }
 
 .card-body p {
     font-size: 1rem;
     color: #555;
+    line-height: 1.6; /* Mejorar la legibilidad del texto */
 }
 
 .fs-3 {
-    font-size: 1.75rem;
+    font-size: 0.875rem; /* Ajustado para que sea un poco más grande que x-small */
 }
 
 .me-2 {
-    margin-right: 0.5rem;
+    font-size: 0.875rem; /* Ajustado para consistencia */
+    margin-right: 1rem;
 }
 
 iframe {
     border-radius: 8px;
+    width: 100%; /* Asegura que el iframe se ajuste al contenedor */
+    height: auto; /* Mantiene la proporción del iframe */
+    max-width: 100%; /* Evita que el iframe sea más ancho que su contenedor */
+}
+
+/* Medias Queries para hacer el diseño más responsivo */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Reducido el tamaño del título en pantallas más pequeñas */
+    }
+
+    .card {
+        padding: 10px; /* Menor padding en pantallas pequeñas */
+    }
+
+    .card-title {
+        font-size: 1.5rem; /* Ajustado tamaño del título */
+    }
+
+    .card-body p {
+        font-size: 0.875rem; /* Ajustado tamaño del texto */
+    }
+
+    .fs-3 {
+        font-size: 0.75rem; /* Ajustado para ser más adecuado en pantallas pequeñas */
+    }
+
+    .me-2 {
+        font-size: 0.75rem; /* Ajustado para consistencia */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Reducido aún más el tamaño del título */
+    }
+
+    .card {
+        padding: 5px; /* Menor padding en pantallas muy pequeñas */
+    }
+
+    .card-title {
+        font-size: 1.25rem; /* Ajustado para pantallas más pequeñas */
+    }
+
+    .card-body p {
+        font-size: 0.75rem; /* Ajustado para pantallas muy pequeñas */
+    }
+
+    .fs-3 {
+        font-size: 0.625rem; /* Ajustado para ser más pequeño */
+    }
+
+    .me-2 {
+        font-size: 0.625rem; /* Ajustado para consistencia */
+    }
 }

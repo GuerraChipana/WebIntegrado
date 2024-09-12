@@ -10,7 +10,7 @@ function BurguerButton() {
         <div>
             <Burguer>
                 <div
-                    className={`icon nav-icon-5 ${clicked ? 'open' : ''}`}
+                    className={`icon ${clicked ? 'open' : ''}`}
                     onClick={() => setClicked(!clicked)}
                 >
                     <span></span>
@@ -19,10 +19,10 @@ function BurguerButton() {
                 </div>
             </Burguer>
             <Menu className={clicked ? 'open' : ''}>
-                <Link to="/">Inicio</Link>
-                <Link to="/Nosotros">Nosotros</Link>
-                <Link to="/Categorias">Categorias</Link>
-                <Link to="/Contacto">Contacto</Link>
+                <Link to="/" onClick={() => setClicked(false)}>Inicio</Link>
+                <Link to="/Nosotros" onClick={() => setClicked(false)}>Nosotros</Link>
+                <Link to="/Categorias" onClick={() => setClicked(false)}>Categorias</Link>
+                <Link to="#" onClick={() => setClicked(false)}>Contactanos</Link>
             </Menu>
         </div>
     );
@@ -34,14 +34,12 @@ const Burguer = styled.div`
     .icon {
         width: 35px;
         height: 30px;
-        position: fixed; /* O absolute si es necesario */
-        top: 50px; /* Ajusta según sea necesario */
-        right: 20px; /* Ajusta según sea necesario */
+        position: relative;
         cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 1000; /* Asegúrate de que el z-index sea alto */
+        z-index: 1001; /* Asegúrate de que el z-index sea mayor que el del slider */
     }
 
     .icon span {
@@ -87,36 +85,35 @@ const Burguer = styled.div`
 
 const Menu = styled.div`
     display: none;
-    background-color: #3250ff;
-    position: fixed; /* O absolute si es necesario */
-    top: 112px;
+    background-color: rgb(15, 18, 37);
+    position: absolute;
+    top: 112.2px; /* Ajusta según sea necesario */
     right: 0;
-    width: 208px;
-    height: 0; /* Inicialmente colapsado */
+    width: 250px; /* Ajusta según sea necesario */
+    height: 0; 
     overflow: hidden;
-    text-align: center; /* Centra horizontalmente el texto */
-    border-radius: 0 0 10px 110px; /* Forma de media esfera */
-    display: flex; /* Usar flexbox para centrar verticalmente */
-    flex-direction: column; /* Colocar los elementos en una columna */
-    justify-content: center; /* Centrar verticalmente */
+    text-align: center; 
+    border-radius: 0 0 10px 10px; /* Ajusta el radio del borde */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
     transition: height 0.7s ease, background-color 0.7s ease;
-    z-index: 999; /* Asegúrate de que el z-index sea alto pero menor que el del botón */
+    z-index: 1000; /* Asegúrate de que el z-index sea mayor que el del slider */
 
     &.open {
-        display: flex; /* Mostrar como flexbox cuando está abierto */
+        display: flex;
         height: 250px; /* Altura expandida */
     }
 
     a {
         color: #fff;
-        padding: 10px;
-        margin: 0; /* Ajustar margen para centrar el texto */
+        padding: 15px; /* Ajusta el padding para mayor comodidad */
         text-decoration: none;
         font-size: 17px;
     }
 
     a:hover {
-        background-color: rgba(255, 255, 255, 0.2); /* Color más claro al pasar el mouse */
+        background-color: rgba(255, 255, 255, 0.25); /* Color más claro al pasar el mouse */
     }
 
     @media (min-width: 768px) {

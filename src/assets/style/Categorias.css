@@ -1,7 +1,4 @@
-/* Asegúrate de que el contenedor principal tenga suficiente espacio en la parte superior para el header fijo */
 body {
-    margin: 0;
-    padding-top: 80px; /* Ajusta este valor si el tamaño del header cambia */
     font-family: Arial, sans-serif;
 }
 
