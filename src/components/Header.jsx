@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import BurguerButton from '../components/BurguerButton';
 import { Link } from 'react-router-dom';
-import '../style/Header.css'
+import '../assets/style/Header.css'
 
 const Header = () => {
     const [showHeader, setShowHeader] = useState(true);
@@ -31,7 +31,7 @@ const Header = () => {
             <div className="logo">
                 <Link to="/">
                     <img
-                        src="src/img/logo_ferreteria.png"
+                        src="src\assets\img\logo_DFEEC.png"
                         alt="Logo"
                         width="120"
                         height="100"
@@ -39,9 +39,8 @@ const Header = () => {
                 </Link>
             </div>
             <nav className="nav">
-                <Link to="/Especialidades">Especialidades</Link>
-                <Link to="/Medicos">Médicos</Link>
                 <Link to="/Nosotros">Nosotros</Link>
+                <Link to="/Categorias">Categorias</Link>
                 <Link to="/Contacto">Contacto</Link>
             </nav>
             <div className="user-action">

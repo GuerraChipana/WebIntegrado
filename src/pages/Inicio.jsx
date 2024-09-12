@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import '../style/Especialidades.css';
-import '../style/Home.css';
+import '../assets/style/Categorias_home.css';
+import '../assets/style/Home.css';
 import { Link } from 'react-router-dom';
 import SKDImg from "../components/SKDImg";
 
@@ -12,7 +12,7 @@ const Inicio = () => {
                 <SKDImg />
             </section>
             <section id="Conocenos" className="about">
-            <div className='about-container'>
+                <div className='about-container'>
                     <h2>Conócenos</h2>
                     <p>
                         En Ferretería Pepito nos dedicamos a ofrecer las mejores herramientas y materiales para tus proyectos.
@@ -36,7 +36,7 @@ const Inicio = () => {
                         </div>
                     </div>
                     <div className="image-container">
-                        <img src="src\img\Vendedor.jpeg" alt="img_vendedor" width="400" />
+                        <img src="src\assets\img\Vendedor.jpeg" alt="img_vendedor" width="400" />
                     </div>
                 </div>
             </section>
@@ -45,7 +45,7 @@ const Inicio = () => {
                 <h2>Nuestros Productos</h2>
                 <div className="container">
                     <div className="specialty">
-                        <img src="src\img\Herramientas.png" alt="Herramientas" />
+                        <img src="src\assets\img\Herramientas.png" alt="Herramientas" />
                         <i className="fas fa-hammer icon"></i>
                         <div className="text-content">
                             <h4>Herramientas</h4>
@@ -53,7 +53,7 @@ const Inicio = () => {
                         </div>
                     </div>
                     <div className="specialty">
-                        <img src="src\img\Materiales.jpg" alt="Materiales" />
+                        <img src="src\assets\img\Materiales.jpg" alt="Materiales" />
                         <i className="fas fa-cogs icon"></i>
                         <div className="text-content">
                             <h4>Materiales</h4>
@@ -61,7 +61,7 @@ const Inicio = () => {
                         </div>
                     </div>
                     <div className="specialty">
-                        <img src="src\img\Pintura.png" alt="Pinturas" />
+                        <img src="src\assets\img\Pintura.jpg" alt="Pinturas" />
                         <i className="fas fa-paint-brush icon"></i>
                         <div className="text-content">
                             <h4>Pinturas</h4>
@@ -69,7 +69,7 @@ const Inicio = () => {
                         </div>
                     </div>
                     <div className="specialty">
-                        <img src="src\img\Materiales_electricos.png" alt="Electricidad" />
+                        <img src="src\assets\img\Materiales_electricos.jpg" alt="Electricidad" />
                         <i className="fas fa-bolt icon"></i>
                         <div className="text-content">
                             <h4>Materiales Eléctricos</h4>
@@ -78,8 +78,8 @@ const Inicio = () => {
                     </div>
                 </div>
                 <nav className="more-specialties">
-                    <Link to="/Productos">
-                        <p>Más productos <i className="fas fa-arrow-right"></i></p>
+                    <Link to="/Categorias">
+                        <p>Ver más categorias <i className="fas fa-arrow-right"></i></p>
                     </Link>
                 </nav>
             </section>

@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Inicio';
-import Especialidades from './pages/Especialidades';
-import DoctorsList from './pages/DoctorsList'; 
-import './style/Home.css'; 
+import Categorias from './pages/Categorias';
+import Nosotros from './pages/Nosotros';
+import '../src/assets/style/Home.css';
 
 const App = () => {
   return (
@@ -15,8 +15,8 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/especialidades" element={<Especialidades />} />
-          <Route path="/medicos" element={<DoctorsList />} /> {/* Asegúrate de usar DoctorsList */}
+          <Route path="/Categorias" element={<Categorias />} />
+          <Route path='/Nosotros' element={<Nosotros />} />
         </Routes>
       </main>
       <Footer />

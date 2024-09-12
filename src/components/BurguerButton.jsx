@@ -20,9 +20,8 @@ function BurguerButton() {
             </Burguer>
             <Menu className={clicked ? 'open' : ''}>
                 <Link to="/">Inicio</Link>
-                <Link to="/Especialidades">Especialidades</Link>
-                <Link to="/Medicos">Médicos</Link>
                 <Link to="/Nosotros">Nosotros</Link>
+                <Link to="/Categorias">Categorias</Link>
                 <Link to="/Contacto">Contacto</Link>
             </Menu>
         </div>

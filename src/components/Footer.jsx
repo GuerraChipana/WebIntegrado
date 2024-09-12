@@ -14,20 +14,20 @@ const Footer = () => {
                 </div>
 
                 <div className="address">
-                    <p> Los Rosales C-14, Ica 11001</p>
+                    <p> Psj. Los Angeles 121 urb. San Carlos y anexos, Ica, Perú</p>
                 </div>
 
                 <div className="contact-info">
                     <div>
                         <i className="fas fa-envelope"></i>
-                        <a href="mailto:clinica@gmail.com">CaliFerreteria@gmail.com</a>
+                        <a href="mailto:clinica@gmail.com">FerreteriaDFEEC@gmail.com</a>
                         <span className="separator">|</span>
-                        <i className="fas fa-phone"></i> 951467284
+                        <i className="fas fa-phone"></i>956342842
                     </div>
                 </div>
 
                 <div className="footer-links">
-                    <p>Política de privacidad <span className="separator">|</span></p>
+                    <p>Política de privacidad <span className="separator">| Codigo de ética</span></p>
                 </div>
 
                 <div className="logo-section">
