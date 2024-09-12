@@ -1,0 +1,20 @@
+.card {
+  background-color: #f0f8ff;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.card-text {
+  font-size: 1.15rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.card-img-top {
+  width: 100px;
+  height: 125px;
+  object-fit: cover;
+}
