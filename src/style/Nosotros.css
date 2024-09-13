@@ -52,52 +52,52 @@ iframe {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem; /* Reducido el tamaño del título en pantallas más pequeñas */
+        font-size: 2rem; 
     }
 
     .card {
-        padding: 10px; /* Menor padding en pantallas pequeñas */
+        padding: 10px; 
     }
 
     .card-title {
-        font-size: 1.5rem; /* Ajustado tamaño del título */
+        font-size: 1.5rem; 
     }
 
     .card-body p {
-        font-size: 0.875rem; /* Ajustado tamaño del texto */
+        font-size: 0.875rem; 
     }
 
     .fs-3 {
-        font-size: 0.75rem; /* Ajustado para ser más adecuado en pantallas pequeñas */
+        font-size: 0.75rem;
     }
 
     .me-2 {
-        font-size: 0.75rem; /* Ajustado para consistencia */
+        font-size: 0.75rem; 
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.5rem; /* Reducido aún más el tamaño del título */
+        font-size: 1.5rem; 
     }
 
     .card {
-        padding: 5px; /* Menor padding en pantallas muy pequeñas */
+        padding: 5px; 
     }
 
     .card-title {
-        font-size: 1.25rem; /* Ajustado para pantallas más pequeñas */
+        font-size: 1.25rem; 
     }
 
     .card-body p {
-        font-size: 0.75rem; /* Ajustado para pantallas muy pequeñas */
+        font-size: 0.75rem; 
     }
 
     .fs-3 {
-        font-size: 0.625rem; /* Ajustado para ser más pequeño */
+        font-size: 0.625rem;
     }
 
     .me-2 {
-        font-size: 0.625rem; /* Ajustado para consistencia */
+        font-size: 0.625rem;
     }
 }

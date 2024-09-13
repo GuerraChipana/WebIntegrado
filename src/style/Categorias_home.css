@@ -16,11 +16,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px; /* Espacio entre las categorías */
+    gap: 20px; 
 }
 
 .specialty {
-    flex: 1 1 calc(25% - 20px); /* Ocupa el 25% del ancho menos el gap */
+    flex: 1 1 calc(25% - 20px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,20 +30,19 @@
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
-    height: 325px; /* Altura fija para mantener consistencia */
-    box-sizing: border-box; /* Incluir padding y borde en el tamaño */
-    overflow: hidden; /* Para evitar desbordes */
-}
+    height: 325px; 
+    box-sizing: border-box; 
+    overflow: hidden; }
 
 .specialty:hover {
-    transform: scale(1.05); /* Efecto hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .specialty img {
     width: 100%;
     height: 60%;
-    object-fit: cover; /* Mantener la proporción de la imagen */
+    object-fit: cover; 
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -71,7 +70,7 @@
     margin: 0;
     font-size: 14px;
     color: #ffffff;
-    word-wrap: break-word; /* Ajustar texto largo */
+    word-wrap: break-word; 
 }
 
 .more-specialties {
@@ -98,30 +97,30 @@
 /* Responsividad */
 @media (max-width: 768px) {
     .specialty {
-        flex: 1 1 calc(45% - 20px); /* Dos elementos por fila en pantallas medianas */
+        flex: 1 1 calc(45% - 20px); 
     }
     .specialties h2 {
-        font-size: 1.5rem; /* Ajustar tamaño de fuente en pantallas medianas */
+        font-size: 1.5rem; 
     }
 }
 
 @media (max-width: 480px) {
     .specialty {
-        flex: 1 1 100%; /* Un solo elemento por fila en pantallas pequeñas */
+        flex: 1 1 100%; 
     }
     .specialties h2 {
-        font-size: 1.25rem; /* Ajustar tamaño de fuente en pantallas pequeñas */
+        font-size: 1.25rem;
     }
     .specialty {
-        padding: 5px; /* Reducir padding en pantallas pequeñas */
+        padding: 5px;
     }
     .specialty img {
-        height: 50%; /* Reducir altura de la imagen en pantallas pequeñas */
+        height: 50%; 
     }
     .specialty .icon {
-        font-size: 30px; /* Ajustar tamaño del ícono en pantallas pequeñas */
+        font-size: 30px; 
     }
     .specialty p {
-        font-size: 12px; /* Reducir tamaño de fuente en pantallas pequeñas */
+        font-size: 12px;
     }
 }
