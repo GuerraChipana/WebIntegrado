@@ -16,7 +16,7 @@ const AboutUs = () => {
                             </Card.Title>
                             <Card.Body>
                                 <p>
-                                    En Ferretería Pepito, nuestra misión es proporcionar herramientas y materiales de alta calidad
+                                    En Ferretería DIFELEC, nuestra misión es proporcionar herramientas y materiales de alta calidad
                                     que ayuden a nuestros clientes a realizar sus proyectos de manera efectiva y segura.
                                     Nos comprometemos a ofrecer un servicio al cliente excepcional y asesoramiento experto.
                                 </p>
