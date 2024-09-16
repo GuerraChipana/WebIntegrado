@@ -1,0 +1,63 @@
+/* Contenedor principal */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Sección de bienvenida */
+  .welcome-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contenedor del logo */
+  .logo-container {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo del logo */
+  .logo {
+    max-width: 150px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto;
+  }
+  
+  /* Títulos de bienvenida */
+  .welcome-header h1 {
+    margin: 0 0 10px;
+    color: #343a40;
+    font-size: 2rem;
+  }
+  
+  .welcome-header p {
+    margin: 0;
+    color: #495057;
+    font-size: 1rem;
+  }
+  
+  /* Información de la empresa */
+  .company-info {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .company-info h2 {
+    margin-top: 0;
+    color: #343a40;
+  }
+  
+  .company-info p {
+    margin: 5px 0;
+    color: #495057;
+    font-size: 1rem;
+  }
+  

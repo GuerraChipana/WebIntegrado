@@ -17,14 +17,14 @@ function Dashboard() {
       
       {/* Barra lateral */}
       <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
-        <a href="/" className="d-block p-3 link-dark text-decoration-none" title="Icon-only" data-bs-toggle="tooltip" data-bs-placement="right">
+        <a href="/dashboard/BD_Bienvenida" className="d-block p-3 link-dark text-decoration-none" title="Icon-only" data-bs-toggle="tooltip" data-bs-placement="right">
           <svg className="bi" width="40" height="32"><use xlinkHref="#bootstrap" /></svg>
           <span className="visually-hidden">Icon-only</span>
         </a>
 
         <ul className="nav nav-pills nav-flush flex-column mb-auto text-start">
           <li className="nav-item">
-            <Link to="/dashboard" className="nav-link py-3 border-bottom" title="Bienvenida" data-bs-toggle="tooltip" data-bs-placement="right">
+            <Link to="/dashboard/BD_Bienvenida" className="nav-link py-3 border-bottom" title="Bienvenida" data-bs-toggle="tooltip" data-bs-placement="right">
               <i className="fas fa-home" aria-label="Bienvenida"></i>
               {!collapsed && <span className="nav-text">Bienvenida</span>}
             </Link>
@@ -68,7 +68,7 @@ function Dashboard() {
             <i className="fas fa-user"></i>
           </a>
           <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
-            <li><a className="dropdown-item" href="#">Salir</a></li>
+            <li><a className="dropdown-item" href="/login">Salir</a></li>
           </ul>
         </div>
       </div>
