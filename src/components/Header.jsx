@@ -26,7 +26,7 @@ const Header = ({ carrito }) => {
                     <Link to="/">Inicio</Link>
                     <Link to="/Nosotros">Nosotros</Link>
                     <Link to="/Categorias">Categorías</Link>
-                    <Link to="#">Proveedores</Link>
+                    <Link to="/Productos">Productos</Link>
                 </nav>
 
                 <div className="user-action">

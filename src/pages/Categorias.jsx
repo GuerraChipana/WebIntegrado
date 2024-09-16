@@ -28,28 +28,28 @@ const Categorias = () => {
                             <h4>Fontanería</h4>
                         </div>
                     </Link>
-                    <Link to="/productos?categoria_id=4" className="category">
+                    <Link to="/productos?categoria_id=6" className="category">
                         <img src="src/assets/img/cerrajeria.jpg" alt="Cerrajería" />
                         <i className="fas fa-key icon"></i>
                         <div className="text-content">
                             <h4>Cerrajería</h4>
                         </div>
                     </Link>
-                    <Link to="/productos?categoria_id=5" className="category">
+                    <Link to="/productos?categoria_id=7" className="category">
                         <img src="src/assets/img/Pintura.png" alt="Pinturas" />
                         <i className="fas fa-paint-roller icon"></i>
                         <div className="text-content">
                             <h4>Pinturas</h4>
                         </div>
                     </Link>
-                    <Link to="/productos?categoria_id=6" className="category">
+                    <Link to="/productos?categoria_id=5" className="category">
                         <img src="src/assets/img/jardineria.jpg" alt="Jardinería" />
                         <i className="fas fa-seedling icon"></i>
                         <div className="text-content">
                             <h4>Jardinería</h4>
                         </div>
                     </Link>
-                    <Link to="/productos?categoria_id=7" className="category">
+                    <Link to="/productos?categoria_id=4" className="category">
                         <img src="src/assets/img/construccion.jpg" alt="Construcción" />
                         <i className="fas fa-hammer icon"></i>
                         <div className="text-content">

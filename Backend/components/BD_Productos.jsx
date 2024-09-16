@@ -30,7 +30,10 @@ function BD_Productos() {
       const categoriasResponse = await axios.get('http://localhost:3002/api/categorias');
       const proveedoresResponse = await axios.get('http://localhost:3002/api/proveedores');
 
-      setProductos(productosResponse.data);
+      // Ordena productos por id de menor a mayor
+      const sortedProductos = productosResponse.data.sort((a, b) => a.id - b.id);
+
+      setProductos(sortedProductos);
       setCategorias(categoriasResponse.data);
       setProveedores(proveedoresResponse.data);
     } catch (error) {
@@ -135,21 +138,24 @@ function BD_Productos() {
           </tr>
         </thead>
         <tbody>
-          {productos.map((producto) => (
-            <tr key={producto.id}>
-              <td>{producto.id}</td>
-              <td>{producto.nombre}</td>
-              <td>{producto.descripcion}</td>
-              <td>{producto.precio}</td>
-              <td>{producto.stock}</td>
-              <td>{categorias.find(categoria => categoria.id === producto.categoria_id)?.nombre || 'No asignada'}</td>
-              <td>{proveedores.find(proveedor => proveedor.id === producto.proveedor_id)?.nombre || 'No asignado'}</td>
-              <td>
-                <Button variant="warning" onClick={() => handleEdit(producto)}>Editar</Button>{' '}
-                <Button variant="danger" onClick={() => handleDelete(producto.id)}>Eliminar</Button>
-              </td>
-            </tr>
-          ))}
+          {productos
+            .slice() // Crear una copia del array para no modificar el estado original
+            .sort((a, b) => a.id - b.id) // Ordenar por id de menor a mayor
+            .map((producto) => (
+              <tr key={producto.id}>
+                <td>{producto.id}</td>
+                <td>{producto.nombre}</td>
+                <td>{producto.descripcion}</td>
+                <td>{producto.precio}</td>
+                <td>{producto.stock}</td>
+                <td>{categorias.find(categoria => categoria.id === producto.categoria_id)?.nombre || 'No asignada'}</td>
+                <td>{proveedores.find(proveedor => proveedor.id === producto.proveedor_id)?.nombre || 'No asignado'}</td>
+                <td>
+                  <Button variant="warning" onClick={() => handleEdit(producto)}>Editar</Button>{' '}
+                  <Button variant="danger" onClick={() => handleDelete(producto.id)}>Eliminar</Button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </Table>
 
