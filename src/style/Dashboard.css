@@ -1,38 +1,104 @@
+/* Contenedor principal */
 .dashboard-container {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  .sidebar {
-    width: 280px;
-    background-color: #343a40; 
-    padding: 1rem;
-    display: flex;
+  display: flex;
+  height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+  overflow: hidden; /* Evita el desplazamiento global en la página */
+}
+
+/* Estilo para la barra lateral */
+.sidebar {
+  flex-shrink: 0;
+  width: 170px;
+  height: 100vh; /* Asegura que la barra lateral tenga la altura completa de la ventana */
+  transition: width 0.3s ease;
+  overflow-y: auto; /* Agrega desplazamiento solo en la barra lateral si es necesario */
+  background-color: #343a40; /* Fondo gris oscuro */
+}
+
+.sidebar.collapsed {
+  width: 4.5rem;
+}
+
+.nav-text {
+  margin-left: 1rem;
+  color: #f8f9fa; /* Texto blanco */
+}
+
+.sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #f8f9fa;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #495057; /* Hover en gris más claro */
+  color: #fff;
+}
+
+.sidebar.collapsed .nav-text {
+  display: none;
+}
+
+/* Ajustes para los iconos y el texto cuando el sidebar está colapsado */
+.sidebar.collapsed .nav-link {
+  justify-content: center;
+}
+
+.sidebar .nav-link i {
+  font-size: 1.5rem;
+  color: #adb5bd; /* Color de los iconos */
+}
+
+/* Estilo del botón de alternancia */
+.sidebar-toggle {
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  background-color: #495057; /* Fondo oscuro para el botón */
+  border: 2px solid #343a40; /* Borde más oscuro */
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.toggle-icon:hover {
+  background-color: #343a40; /* Hover en el botón */
+  border-color: #495057;
+}
+
+/* Dropdown para el botón de usuario */
+.dropdown .dropdown-toggle {
+  color: #adb5bd;
+}
+
+.dropdown:hover .dropdown-toggle {
+  color: #fff;
+}
+
+/* Contenido principal */
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Permitir desplazamiento solo en el contenido principal */
+  height: 100vh; /* Asegura que el contenido ocupe toda la altura de la ventana */
+  box-sizing: border-box; /* Asegura que el padding no afecte el cálculo de la altura */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .dashboard-container {
     flex-direction: column;
-    position: relative;
-  }
-  
-  .sidebar-brand {
-    margin-bottom: 1rem;
-  }
-  
-  .sidebar-divider {
-    border-top: 1px solid #6c757d; /* Lighter divider color */
-  }
-  
-  .nav-link {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-  }
-  
-  .nav-link.active {
-    background-color: #495057; /* Highlight active link */
-  }
-  
-  .dropdown-menu {
-    width: 100%;
   }
 
-  
-  
+  .sidebar {
+    position: absolute;
+    z-index: 100;
+  }
+}

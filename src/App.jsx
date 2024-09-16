@@ -33,17 +33,16 @@ const AppContent = () => {
 
       <main>
         <Routes>
-          {/* Pasar la función agregarAlCarrito a Productos */}
-          <Route path="/productos" element={<Productos agregarAlCarrito={agregarAlCarrito} />} />
           <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/BD_Productos" element={<BD_Productos />} />
-          <Route path="/BD_Categorias" element={<BD_Categorias />} />
+          <Route path="/productos" element={<Productos agregarAlCarrito={agregarAlCarrito} />} />
+          <Route path="/carrito" element={<Carrito carrito={carrito} />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="BD_Productos" element={<BD_Productos />} />
+            <Route path="BD_Categorias" element={<BD_Categorias />} />
+          </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/categorias" element={<Categorias />} />
           <Route path="/nosotros" element={<Nosotros />} />
-          {/* Pasar el carrito como prop al componente Carrito */}
-          <Route path="/carrito" element={<Carrito carrito={carrito} />} />
         </Routes>
       </main>
 

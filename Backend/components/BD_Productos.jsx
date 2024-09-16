@@ -4,7 +4,8 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button, Table } from 'react-bootstrap';
 import Swal from 'sweetalert2';
-import '../style/BD_Productos.css'
+import { FaEdit, FaTrashAlt } from 'react-icons/fa'; // Importa iconos de react-icons
+import '../style/BD_Productos.css';
 
 function BD_Productos() {
   const [productos, setProductos] = useState([]);
@@ -120,11 +121,15 @@ function BD_Productos() {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <h1>Gestión de Productos</h1>
-      <Button variant="primary" onClick={() => setShowModal(true)}>Agregar Producto</Button>
+      
+      {/* Botón con margen inferior */}
+      <Button variant="primary" className="mb-3" onClick={() => setShowModal(true)}>
+        Agregar Producto
+      </Button>
 
-      <Table striped bordered hover>
+      <Table striped bordered hover className="table-responsive">
         <thead>
           <tr>
             <th>ID</th>
@@ -139,8 +144,8 @@ function BD_Productos() {
         </thead>
         <tbody>
           {productos
-            .slice() // Crear una copia del array para no modificar el estado original
-            .sort((a, b) => a.id - b.id) // Ordenar por id de menor a mayor
+            .slice()
+            .sort((a, b) => a.id - b.id)
             .map((producto) => (
               <tr key={producto.id}>
                 <td>{producto.id}</td>
@@ -151,60 +156,69 @@ function BD_Productos() {
                 <td>{categorias.find(categoria => categoria.id === producto.categoria_id)?.nombre || 'No asignada'}</td>
                 <td>{proveedores.find(proveedor => proveedor.id === producto.proveedor_id)?.nombre || 'No asignado'}</td>
                 <td>
-                  <Button variant="warning" onClick={() => handleEdit(producto)}>Editar</Button>{' '}
-                  <Button variant="danger" onClick={() => handleDelete(producto.id)}>Eliminar</Button>
+                  <div className="d-flex justify-content-around">
+                    {/* Botón de editar */}
+                    <Button className="icon-button icon-edit" onClick={() => handleEdit(producto)}>
+                      <FaEdit />
+                    </Button>
+                    {/* Botón de eliminar */}
+                    <Button className="icon-button icon-delete" onClick={() => handleDelete(producto.id)}>
+                      <FaTrashAlt />
+                    </Button>
+                  </div>
                 </td>
               </tr>
             ))}
         </tbody>
       </Table>
 
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>{editId ? 'Editar Producto' : 'Agregar Producto'}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="nombre" className="form-label">Nombre</label>
-              <input type="text" className="form-control" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="descripcion" className="form-label">Descripción</label>
-              <input type="text" className="form-control" id="descripcion" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="precio" className="form-label">Precio</label>
-              <input type="number" className="form-control" id="precio" value={precio} onChange={(e) => setPrecio(e.target.value)} required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="stock" className="form-label">Stock</label>
-              <input type="number" className="form-control" id="stock" value={stock} onChange={(e) => setStock(e.target.value)} required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="categoria" className="form-label">Categoría</label>
-              <select id="categoria" className="form-select" value={categoriaId} onChange={(e) => setCategoriaId(e.target.value)} required>
-                <option value="">Selecciona una categoría</option>
-                {categorias.map(categoria => (
-                  <option key={categoria.id} value={categoria.id}>{categoria.nombre}</option>
-                ))}
-              </select>
-            </div>
-            <div className="mb-3">
-              <label htmlFor="proveedor" className="form-label">Proveedor</label>
-              <select id="proveedor" className="form-select" value={proveedorId} onChange={(e) => setProveedorId(e.target.value)} required>
-                <option value="">Selecciona un proveedor</option>
-                {proveedores.map(proveedor => (
-                  <option key={proveedor.id} value={proveedor.id}>{proveedor.nombre}</option>
-                ))}
-              </select>
-            </div>
-            <Button variant="primary" type="submit">
-              {editId ? 'Actualizar' : 'Agregar'}
-            </Button>
-          </form>
-        </Modal.Body>
-      </Modal>
+      <Modal show={showModal} onHide={() => setShowModal(false)} size="lg">
+  <Modal.Header closeButton>
+    <Modal.Title>{editId ? 'Editar Producto' : 'Agregar Producto'}</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+    <form onSubmit={handleSubmit}>
+      <div className="mb-3">
+        <label htmlFor="nombre" className="form-label">Nombre</label>
+        <input type="text" className="form-control" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="descripcion" className="form-label">Descripción</label>
+        <input type="text" className="form-control" id="descripcion" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} required />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="precio" className="form-label">Precio</label>
+        <input type="number" className="form-control" id="precio" value={precio} onChange={(e) => setPrecio(e.target.value)} required />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="stock" className="form-label">Stock</label>
+        <input type="number" className="form-control" id="stock" value={stock} onChange={(e) => setStock(e.target.value)} required />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="categoria" className="form-label">Categoría</label>
+        <select id="categoria" className="form-select" value={categoriaId} onChange={(e) => setCategoriaId(e.target.value)} required>
+          <option value="">Selecciona una categoría</option>
+          {categorias.map(categoria => (
+            <option key={categoria.id} value={categoria.id}>{categoria.nombre}</option>
+          ))}
+        </select>
+      </div>
+      <div className="mb-3">
+        <label htmlFor="proveedor" className="form-label">Proveedor</label>
+        <select id="proveedor" className="form-select" value={proveedorId} onChange={(e) => setProveedorId(e.target.value)} required>
+          <option value="">Selecciona un proveedor</option>
+          {proveedores.map(proveedor => (
+            <option key={proveedor.id} value={proveedor.id}>{proveedor.nombre}</option>
+          ))}
+        </select>
+      </div>
+      <Button variant="primary" type="submit">
+        {editId ? 'Actualizar' : 'Agregar'}
+      </Button>
+    </form>
+  </Modal.Body>
+</Modal>
+
     </div>
   );
 }

@@ -1,76 +1,81 @@
-import { Link } from 'react-router-dom';
-import '../style/Dashboard.css';
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import '../style/Dashboard.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Importa íconos de Font Awesome
 
 function Dashboard() {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleSidebar = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
-    <div className="dashboard-container">
-      <div className="sidebar bg-dark text-white">
-        <a href="/" className="sidebar-brand d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <svg className="bi me-2" width="40" height="40">
-            <use xlinkHref="#bootstrap" />
-          </svg>
-          <span className="fs-4">Barra lateral</span>
+    <div className={`dashboard-container ${collapsed ? 'sidebar-collapsed' : ''}`}>
+      
+      {/* Barra lateral */}
+      <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
+        <a href="/" className="d-block p-3 link-dark text-decoration-none" title="Icon-only" data-bs-toggle="tooltip" data-bs-placement="right">
+          <svg className="bi" width="40" height="32"><use xlinkHref="#bootstrap" /></svg>
+          <span className="visually-hidden">Icon-only</span>
         </a>
-        <hr className="sidebar-divider" />
-        <ul className="nav nav-pills flex-column mb-auto">
+
+        <ul className="nav nav-pills nav-flush flex-column mb-auto text-start">
           <li className="nav-item">
-            <Link to="/" className="nav-link active" aria-current="page">
-              <svg className="bi me-2" width="16" height="16">
-                <use xlinkHref="#home" />
-              </svg>
-              Bienvenido
+            <Link to="/dashboard" className="nav-link py-3 border-bottom" title="Bienvenida" data-bs-toggle="tooltip" data-bs-placement="right">
+              <i className="fas fa-home" aria-label="Bienvenida"></i>
+              {!collapsed && <span className="nav-text">Bienvenida</span>}
             </Link>
           </li>
           <li>
-            <Link to="/BD_Categorias" className="nav-link text-white">
-              <svg className="bi me-2" width="16" height="16">
-                <use xlinkHref="#speedometer2" />
-              </svg>
-              Categorías
+            <Link to="/dashboard/BD_Categorias" className="nav-link py-3 border-bottom" title="Categorías" data-bs-toggle="tooltip" data-bs-placement="right">
+              <i className="fas fa-tags" aria-label="Categorías"></i>
+              {!collapsed && <span className="nav-text">Categorías</span>}
             </Link>
           </li>
           <li>
-            <Link to="/BD_Productos" className="nav-link text-white">
-              <svg className="bi me-2" width="16" height="16">
-                <use xlinkHref="#table" />
-              </svg>
-              Productos
+            <Link to="/dashboard/BD_Productos" className="nav-link py-3 border-bottom" title="Productos" data-bs-toggle="tooltip" data-bs-placement="right">
+              <i className="fas fa-box" aria-label="Productos"></i>
+              {!collapsed && <span className="nav-text">Productos</span>}
             </Link>
           </li>
           <li>
-            <Link to="#" className="nav-link text-white">
-              <svg className="bi me-2" width="16" height="16">
-                <use xlinkHref="#grid" />
-              </svg>
-              Proveedores
+            <Link to="/dashboard/BD_Proveedores" className="nav-link py-3 border-bottom" title="Proveedores" data-bs-toggle="tooltip" data-bs-placement="right">
+              <i className="fas fa-truck" aria-label="Proveedores"></i>
+              {!collapsed && <span className="nav-text">Proveedores</span>}
             </Link>
           </li>
           <li>
-            <Link to="#" className="nav-link text-white">
-              <svg className="bi me-2" width="16" height="16">
-                <use xlinkHref="#people-circle" />
-              </svg>
-              Clientes
+            <Link to="/dashboard/BD_Usuarios" className="nav-link py-3 border-bottom" title="Usuarios" data-bs-toggle="tooltip" data-bs-placement="right">
+              <i className="fas fa-users" aria-label="Usuarios"></i>
+              {!collapsed && <span className="nav-text">Usuarios</span>}
             </Link>
           </li>
         </ul>
-        <hr className="sidebar-divider" />
-        <div className="dropdown">
-          <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <i className='fas fa-user'><br /></i>          
-            <br />  
-            <strong>mdo</strong>
+
+        {/* Botón de alternancia con un icono */}
+        <div className="sidebar-toggle" onClick={toggleSidebar}>
+          <div className="toggle-icon">
+            <FontAwesomeIcon icon={collapsed ? faChevronRight : faChevronLeft} size="lg" color="#fff" />
+          </div>
+        </div>
+
+        {/* Dropdown para salir */}
+        <div className="dropdown border-top mt-auto">
+          <a href="#" className="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+            <i className="fas fa-user"></i>
           </a>
-          <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li><Link className="dropdown-item" to="#"></Link></li>
-            <li><hr className="dropdown-divider" /></li>
-            <li><Link className="dropdown-item" to="/Login">Salir</Link></li>
+          <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+            <li><a className="dropdown-item" href="#">Salir</a></li>
           </ul>
         </div>
       </div>
-      {/* Aquí podrías agregar el contenido principal del Dashboard */}
+
+      {/* Contenido principal */}
       <div className="dashboard-content">
-        {/* Aquí se renderizará el contenido de las rutas internas del Dashboard */}
+        <Outlet />
       </div>
     </div>
   );
