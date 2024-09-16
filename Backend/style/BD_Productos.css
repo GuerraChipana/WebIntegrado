@@ -1,0 +1,156 @@
+/* Contenedor principal */
+.container {
+  max-width: 1200px; /* Aumento del ancho máximo para mayor espacio */
+  margin-top: 60px;
+}
+
+/* Encabezado */
+h2 {
+  color: #343a40; /* Color más oscuro para mayor contraste */
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+}
+
+/* Estilos para los inputs */
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem; /* Bordes más redondeados */
+  padding: 12px;
+  font-size: 1rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra interna sutil */
+}
+
+/* Estilos para el botón principal */
+.btn-primary {
+  background-color: #007bff; /* Color azul más acorde a ferretería */
+  border-color: #007bff;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Color azul más oscuro para hover */
+  border-color: #0056b3;
+}
+
+/* Estilos para el botón de editar */
+.btn-warning {
+  background-color: #ffc107; /* Color amarillo oscuro */
+  border-color: #ffc107;
+  color: #212529;
+  border-radius: 0.5rem;
+  padding: 8px 16px; /* Botón más pequeño */
+  font-size: 0.875rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+}
+
+.btn-warning:hover {
+  background-color: #e0a800; /* Color amarillo más oscuro para hover */
+  border-color: #e0a800;
+}
+
+/* Estilos para el botón de eliminar */
+.btn-danger {
+  background-color: #dc3545; /* Color rojo más acorde a ferretería */
+  border-color: #dc3545;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 8px 16px; /* Botón más pequeño */
+  font-size: 0.875rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Color rojo más oscuro para hover */
+  border-color: #c82333;
+}
+
+/* Estilos para la tabla de productos */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.table thead th {
+  background-color: #007bff; /* Color azul más acorde a ferretería */
+  color: #fff;
+  font-weight: bold;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f2f2f2; /* Fondo gris claro para filas pares */
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef; /* Fondo gris claro para hover */
+}
+
+/* Estilos para la lista de productos */
+.list-group-item {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin-bottom: 15px;
+  padding: 20px; /* Mayor espaciado interno */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+  background-color: #f9f9f9; /* Fondo gris claro */
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef; /* Fondo gris claro para hover */
+  cursor: pointer;
+}
+
+/* Espaciado entre los botones */
+.me-2 {
+  margin-right: 0.75rem;
+}
+
+/* Estilo del párrafo cuando no hay productos */
+p {
+  text-align: center;
+  color: #6c757d;
+  font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+  font-style: italic; /* Fuente en cursiva para énfasis */
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  background-color: #007bff; /* Color azul más acorde a ferretería */
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d; /* Color gris */
+  border-color: #6c757d;
+}
+
+.modal-footer .btn-primary {
+  background-color: #007bff; /* Color azul más acorde a ferretería */
+  border-color: #007bff;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #0056b3; /* Color azul más oscuro para hover */
+  border-color: #0056b3;
+}

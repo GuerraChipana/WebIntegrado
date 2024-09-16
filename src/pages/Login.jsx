@@ -42,7 +42,12 @@ const Login = () => {
                         required
                     />
                 </div>
-                <button type="submit" className="submit-button">Iniciar sesión</button>
+                <div className='container m-1'>
+                    <button type="submit" className="submit-button">Iniciar sesión</button>
+                    <button type="submit" className="submit-button">Registrarte</button>
+                </div>
+
+
 
                 {error && <p className="error-message">{error}</p>}
             </form>
